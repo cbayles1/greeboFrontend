@@ -6,19 +6,18 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  //templateUrl: './app.component.html',
-  template: `<p>{{sampleBar}}</p><br/> <button (click)="getChocBar()">Click Me!</button>`,
+  templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  sampleBar: any = null;
+  sampleBar: any;
+  myOutput = "";
   baseUrl = "http://localhost:5099/api/";
   constructor(private httpClient: HttpClient) {}
   
-  getChocBar(): void {
-    this.httpClient.get(this.baseUrl + "chocolateBars/2", {headers: {Accept: 'application/json'}}).subscribe((res: any) => {
-      this.sampleBar = res;
-      console.log(this.sampleBar);
+  pickChoc(barId: number): void {
+    this.httpClient.get(this.baseUrl + `chocolateBars/${barId}`, {headers: {Accept: 'application/json'}}).subscribe((res: any) => {
+      this.myOutput = res.company;
     });
   }
 }
