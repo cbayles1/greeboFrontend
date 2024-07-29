@@ -11,5 +11,5 @@ import { ChocolateBagComponent } from "./chocolate-bag/chocolate-bag.component";
   styleUrl: './app-body.component.scss'
 })
 export class AppBodyComponent {
-
+  
 }
