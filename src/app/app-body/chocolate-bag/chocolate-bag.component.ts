@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -28,8 +28,8 @@ export class ChocolateBagComponent {
   }
 
   importList() {
-    this.httpClient.get(this.baseUrl + `users/1/bars`, this.jsonHeaders).subscribe((res: any) => {
-      this.barList = res;
-    });
+    // this.httpClient.get(this.baseUrl + `users/${this.userId}/bars`, this.jsonHeaders).subscribe((res: any) => {
+    //   this.barList = res;
+    // });
   }
 }
