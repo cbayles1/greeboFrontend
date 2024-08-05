@@ -1,8 +1,6 @@
 <button (click)="openMenu()">
     @if (choice == null) {
-        <div>
-Lorem ipsum
-        </div>
+        <div>{{default}}</div>
     } @else {
         <div>{{choice.company}}<br>Origin: {{choice.specificOrigin}}</div>
     }

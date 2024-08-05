@@ -3,9 +3,9 @@
         @for (day of daysOfTheWeek; track day) {
             <div class="dayColumn">
                 <h2 class="dayOfTheWeek">{{day}}</h2>
-                <meal [time]="0" [day]="daysOfTheWeek.indexOf(day)" (setChoiceEvent)="addToSchedule($event)"/>
-                <meal [time]="1" [day]="daysOfTheWeek.indexOf(day)" (setChoiceEvent)="addToSchedule($event)"/>
-                <meal [time]="2" [day]="daysOfTheWeek.indexOf(day)" (setChoiceEvent)="addToSchedule($event)"/>
+                <meal default="Breakfast" [time]="0" [day]="daysOfTheWeek.indexOf(day)" (setChoiceEvent)="addToSchedule($event)"/>
+                <meal default="Lunch" [time]="1" [day]="daysOfTheWeek.indexOf(day)" (setChoiceEvent)="addToSchedule($event)"/>
+                <meal default="Dinner" [time]="2" [day]="daysOfTheWeek.indexOf(day)" (setChoiceEvent)="addToSchedule($event)"/>
             </div>
         }
     </div>

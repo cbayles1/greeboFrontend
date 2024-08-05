@@ -13,6 +13,7 @@ export class MealComponent {
   @Output() setChoiceEvent = new EventEmitter<Object>();
   @Input() time!: number;
   @Input() day!: number;
+  @Input() default!: string;
   choice: any = null;
 
   constructor(public dialog : MatDialog) {}
