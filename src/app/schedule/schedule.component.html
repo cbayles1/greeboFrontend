@@ -15,5 +15,11 @@
     </div>
     <br>
     <button id="submitScheduleBtn" (click)="submitSchedule()">Submit</button>
-    <h1>Greeblo Health: {{health}}</h1>
+    <h1>
+        @if (isLoading) {
+            Calculating...
+        } @else {
+            Greeblo Health: {{health}}
+        }
+    </h1>
 </div>
