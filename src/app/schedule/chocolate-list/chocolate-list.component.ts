@@ -2,7 +2,7 @@ import { Component, Input} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'chocolate-bag',
+  selector: 'chocolate-list',
   standalone: true,
   imports: [],
   template: `
@@ -14,9 +14,9 @@ import { HttpClient } from '@angular/common/http';
       </div>
     }
   `,
-  styleUrl: './chocolate-bag.component.scss'
+  styleUrl: './chocolate-list.component.scss'
 })
-export class ChocolateBagComponent {
+export class ChocolateListComponent {
   barList: any;
   baseUrl = "http://localhost:5099/api/";
   jsonHeaders = {headers: {Accept: 'application/json'}};

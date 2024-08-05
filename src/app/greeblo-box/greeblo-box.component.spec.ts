@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DayCounterComponent } from './day-counter.component';
+import { GreebloBoxComponent } from './greeblo-box.component';
 
-describe('DayCounterComponent', () => {
-  let component: DayCounterComponent;
-  let fixture: ComponentFixture<DayCounterComponent>;
+describe('GreebloBoxComponent', () => {
+  let component: GreebloBoxComponent;
+  let fixture: ComponentFixture<GreebloBoxComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DayCounterComponent]
+      imports: [GreebloBoxComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DayCounterComponent);
+    fixture = TestBed.createComponent(GreebloBoxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

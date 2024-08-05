@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TimeCounterComponent } from './time-counter.component';
+import { ChocolateListComponent } from './chocolate-list.component';
 
-describe('TimeCounterComponent', () => {
-  let component: TimeCounterComponent;
-  let fixture: ComponentFixture<TimeCounterComponent>;
+describe('ChocolateListComponent', () => {
+  let component: ChocolateListComponent;
+  let fixture: ComponentFixture<ChocolateListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TimeCounterComponent]
+      imports: [ChocolateListComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TimeCounterComponent);
+    fixture = TestBed.createComponent(ChocolateListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
