@@ -1,3 +1,9 @@
-<button (click)="setChoice(55)">
-    Click Me!
+<button (click)="openMenu()">
+    @if (choice == null) {
+        <div>
+Lorem ipsum
+        </div>
+    } @else {
+        <div>{{choice.company}}<br>Origin: {{choice.specificOrigin}}</div>
+    }
 </button>

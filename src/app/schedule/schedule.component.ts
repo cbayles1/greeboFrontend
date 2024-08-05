@@ -25,8 +25,13 @@ export class ScheduleComponent {
   }
 
   submitSchedule() {
-    let scheduleStr: string = "";
-    this.httpClient.get(this.baseUrl + `/schedule/scheduleStr?=${scheduleStr}`, this.jsonHeaders).subscribe((res: any) => {
+    const scheduleArr = Object.values(Object.fromEntries(this.schedule));
+  
+    let cursor = scheduleArr.length - 1;      // Remove trailing -1 values
+    while (cursor >= 0 && scheduleArr[cursor] < 0) cursor--;
+    const scheduleStr = scheduleArr.slice(0, cursor + 1).join(',').toString();
+
+    this.httpClient.get(this.baseUrl + `schedule?scheduleStr=${scheduleStr}`, this.jsonHeaders).subscribe((res: any) => {
       this.health = res;
     });
   }

@@ -8,6 +8,7 @@ $mealsInADay: 3;
 
 #schedule {
     display: grid;
+    justify-items: center;
 }
 
 #scheduleHeader {
@@ -26,4 +27,16 @@ $mealsInADay: 3;
 #scheduleBody {
     @include weekLongColumns();
     text-align: center;
+}
+
+.dayColumn {
+    display: grid;
+    grid-template-rows: 3;
+}
+
+#submitScheduleBtn {
+    min-width: 5em;
+    max-width: 10em;
+    min-height: 2em;
+    max-height: 5em;
 }

@@ -11,23 +11,4 @@ import { ScheduleComponent } from "./schedule/schedule.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  user: any;
-  baseUrl = "http://localhost:5099/api/";
-  jsonHeaders = {headers: {Accept: 'application/json'}};
-  constructor(private httpClient: HttpClient) {}
-  
-  // ngOnInit() {
-  //   this.importUserInfo();
-  //   if (this.user != null && this.user.id != null) {
-      
-  //   }
-  // }
-
-  // importUserInfo() {
-  //   const userId = 1;
-  //   this.httpClient.get(this.baseUrl + `users/${userId}`, this.jsonHeaders).subscribe((res: any) => {
-  //     this.user = res;
-  //   });
-  // }
-}
+export class AppComponent {}
