@@ -22,7 +22,9 @@ export class MealComponent {
     this.choice = chocolateBar;
     const mealsPerDay = 3;
     let index = this.day * mealsPerDay + this.time;
-    this.setChoiceEvent.emit({'mealIndex': index, 'barId': chocolateBar.id});
+    if (chocolateBar && chocolateBar.id) {
+      this.setChoiceEvent.emit({'mealIndex': index, 'barId': chocolateBar.id});
+    }
   }
 
   openMenu() {

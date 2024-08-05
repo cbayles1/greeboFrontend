@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { MatDialogRef } from '@angular/material/dialog';
+import { ChocolateListService } from '../../chocolate-list.service';
 
 @Component({
   selector: 'chocolate-list',
@@ -23,25 +23,15 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class ChocolateListComponent {
   barList: any;
-  baseUrl = "http://localhost:5099/api/";
-  jsonHeaders = {headers: {Accept: 'application/json'}};
 
   constructor(
-    private httpClient : HttpClient, 
-    public dialogRef : MatDialogRef<ChocolateListComponent>
-  ) {}
+    public dialogRef: MatDialogRef<ChocolateListComponent>, 
+    private chocolateListService: ChocolateListService
+  ) {
+    this.barList = this.chocolateListService.getList();
+  }
 
   onNoClick() {
-    this.dialogRef.close(null);
-  }
-
-  ngOnInit() {
-    this.importList();
-  }
-
-  importList() {
-    this.httpClient.get(this.baseUrl + `chocolateBars/?limit=100`, this.jsonHeaders).subscribe((res: any) => {
-      this.barList = res;
-    });
+    this.dialogRef.close();
   }
 }
