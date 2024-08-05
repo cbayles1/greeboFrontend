@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
     @if (this.barList != null) {
       <div>
         @for (bar of this.barList; track bar.id) {
-          <button>{{bar.company}}</button>
+          <button>{{bar.company}} | Origin: {{bar.specificOrigin}}, {{bar.broadOrigin}} | Critic Rating: {{bar.rating}}/5</button><br>
         }
       </div>
     }
@@ -28,8 +28,8 @@ export class ChocolateListComponent {
   }
 
   importList() {
-    // this.httpClient.get(this.baseUrl + `users/${this.userId}/bars`, this.jsonHeaders).subscribe((res: any) => {
-    //   this.barList = res;
-    // });
+    this.httpClient.get(this.baseUrl + `chocolateBars/?limit=100`, this.jsonHeaders).subscribe((res: any) => {
+      this.barList = res;
+    });
   }
 }

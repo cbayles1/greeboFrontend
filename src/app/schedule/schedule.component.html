@@ -1,1 +1,17 @@
-<p>schedule works!</p>
+<div id="schedule">
+    <div id="scheduleHeader">
+        @for (day of daysOfTheWeek; track day) {
+            <h2 class="dayOfTheWeek">{{day}}</h2>
+        }
+    </div>
+    <div id="scheduleBody">
+        @for (day of daysOfTheWeek; track day) {
+            <div class="dayColumn">
+                <meal [time]="0" [day]="daysOfTheWeek.indexOf(day)" (setChoiceEvent)="addToSchedule($event)"/>
+                <meal [time]="1" [day]="daysOfTheWeek.indexOf(day)" (setChoiceEvent)="addToSchedule($event)"/>
+                <meal [time]="2" [day]="daysOfTheWeek.indexOf(day)" (setChoiceEvent)="addToSchedule($event)"/>
+            </div>
+        }
+    </div>
+    <button (click)="submitSchedule()">Submit</button>
+</div>
