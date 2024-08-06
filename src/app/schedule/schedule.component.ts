@@ -32,6 +32,10 @@ export class ScheduleComponent {
     while (cursor >= 0 && scheduleArr[cursor] < 0) cursor--;
     const scheduleStr = scheduleArr.slice(0, cursor + 1).join(',').toString();
 
+    if (scheduleStr.length < 1) {
+      return;
+    }
+
     this.isLoading = true;
     this.httpClient.get(this.baseUrl + `schedule?scheduleStr=${scheduleStr}`, this.jsonHeaders).subscribe((res: any) => {
       this.isLoading = false;

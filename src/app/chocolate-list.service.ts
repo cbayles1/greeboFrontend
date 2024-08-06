@@ -10,7 +10,6 @@ export class ChocolateListService {
   jsonHeaders = {headers: {Accept: 'application/json'}};
 
   constructor(private httpClient : HttpClient) {
-    console.log("In Constructor");
     this.barList = this.retrieveNewChocolateList();
   }
 

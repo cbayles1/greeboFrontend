@@ -8,12 +8,9 @@ import { ChocolateListService } from './chocolate-list.service';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, GreebloBoxComponent, ScheduleComponent],
-  // providers: [ChocolateListService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  constructor(private chocolateListService: ChocolateListService) {
-    //this.chocolateListService.retrieveNewChocolateList();
-  }
+  constructor(private chocolateListService: ChocolateListService) {}
 }
