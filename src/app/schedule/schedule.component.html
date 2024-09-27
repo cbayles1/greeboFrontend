@@ -14,8 +14,10 @@
     <h1>
         @if (isLoading) {
             Calculating...
-        } @else {
-            Greeblo Health: {{health}}
+        } @else if (greeblo) {
+            Health: {{greeblo.health}}%
+            Cacao: {{greeblo.cacao}}%
+            Days Lasted: {{greeblo.daysLasted}}
         }
     </h1>
 </div>

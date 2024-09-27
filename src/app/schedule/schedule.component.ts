@@ -15,8 +15,8 @@ export class ScheduleComponent {
   baseUrl = "http://localhost:5099/api/";
   jsonHeaders = {headers: {Accept: 'application/json'}};
   
+  greeblo: any;
   isLoading = false;
-  health = 75;
   schedule: Map<number,number> = new Map();
   
   constructor(private httpClient: HttpClient) {  
@@ -39,7 +39,7 @@ export class ScheduleComponent {
     this.isLoading = true;
     this.httpClient.get(this.baseUrl + `schedule?scheduleStr=${scheduleStr}`, this.jsonHeaders).subscribe((res: any) => {
       this.isLoading = false;
-      this.health = res;
+      this.greeblo = res;
     });
   }
 
